@@ -107,3 +107,24 @@ evidence/week01_note.md
 ```
 
 你至少需要填入 Accuracy 和一筆 Failure Case。
+
+
+## Week 4
+
+Week 4 新增 Baseline First 範例，沿用客服問題意圖分類資料。
+
+主要檔案：
+
+```text
+notebooks/week04_baseline.ipynb
+evidence/week04_baseline_report.md
+evidence/week04_solution_choice_note.md
+```
+
+執行方式：
+
+```bash
+jupyter notebook notebooks/week04_baseline.ipynb
+```
+
+本週比較 Majority Class、Rule-based Keyword 與 TF-IDF Logistic Regression，並用 Macro F1 與 `refund_return` recall 判斷是否值得增加模型複雜度。
