@@ -124,14 +124,20 @@ Justification：如果資料仍是 100 筆乾淨合成訊息，複雜模型的�
 
 ## 9. Mini Defense
 
-### Q1. 為什麼你的 Baseline 合理？
+### Q1. 為什麼你的 Baseline 是合理的？以及 Baseline 的出處
 
-我的 task 是客服訊息四分類。Majority Class 是 naive reference，用來確認只看 label 分布會做到什麼程度。Rule-based Keyword 使用 `message` 中的客服關鍵字，在這個情境是合理起點，因為客服分流本來就常由明確詞彙觸發，例如退款、退貨、登入、配送、商品規格。
+我的 baseline 合理，因為本週任務是客服訊息四分類，應先確認不用複雜模型時可以做到什麼程度。Majority Class 是 naive baseline，只根據 train split 的 label 分布預測最常見類別，用來當最低比較基準。Rule-based Keyword 是 current / credible baseline，因為客服分流常由明確關鍵字觸發，例如退款、退貨、登入、配送、商品規格。TF-IDF Logistic Regression 則是 simple ML candidate，用來檢查文字特徵模型是否能比規則更好。
 
-### Q2. 複雜模型多出的增益，集中在哪些案例？
+Baseline 的出處如下：Majority Class 來自 `data/customer_intent_demo.csv` 的 train split label distribution；Rule-based Keyword 來自 Week 1 已建立的 `src/rule_baseline.py` 關鍵字規則；TF-IDF Logistic Regression 來自 Week 4 notebook `notebooks/week04_baseline.ipynb` 中用 train split fit 的 simple ML pipeline。三者都使用同一份 dataset、同一個 locked test set 與同一個 information boundary，因此比較是公平的。
 
-本週 TF-IDF Logistic 沒有比 Rule-based Keyword 帶來增益。它在部分短文字與退款相關案例出錯，且 `refund_return` recall 只有 0.3333。因此目前沒有 evidence 顯示複雜度增加能降低重要 failure cost。
+### Q2. 複雜模型增加的效益主要集中在哪些案例？
 
-### Q3. 如果只提升 1–2%，你還會選它嗎？
+本週 TF-IDF Logistic Regression 沒有比 Rule-based Keyword 帶來增益，反而在短文字與語意相近的案例出錯。錯誤主要集中在 refund / return 相關訊息，例如「發票開錯想退費可以改嗎」或「請問七天鑑賞期怎麼算」，模型容易把它們分到 order delivery 或 product info。
 
-目前不會。因為候選模型沒有提升 1–2%，而是低於 rule-based baseline。即使未來有小幅提升，也需要確認增益是否集中在高風險 failure，例如 refund / return recall，而不是只改善一般案例。若增益很小但增加維護與監控成本，就不值得升級。
+因此，如果未來複雜模型真的有價值，效益應該集中在 rule-based 難處理的案例，例如多意圖訊息、沒有明顯關鍵字的口語訊息、錯字、同義詞、或 refund_return 與 order_delivery / product_info 邊界模糊的訊息，而不是只改善已經很容易被 keyword rule 命中的一般案例。
+
+### Q3. 如果複雜模型只提升 1–2%，你還會選它嗎？為什麼？
+
+目前不會只因為平均指標提升 1–2% 就選複雜模型。原因是目前 Rule-based Keyword 已在 locked test set 上達到 Macro F1 = 1.0000，且成本低、可解釋、容易人工維護。若複雜模型只帶來很小的平均提升，卻增加訓練、監控、資料漂移與維護成本，就不值得升級。
+
+但如果 1–2% 的提升集中在高風險案例，例如 refund_return recall、多意圖訊息或容易導致錯誤客服流程的 failure cases，我會重新考慮。也就是說，是否選複雜模型不只看平均分數，而要看增益是否真的降低重要 failure cost。
