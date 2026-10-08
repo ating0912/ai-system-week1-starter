@@ -1,0 +1,4 @@
+case_id,message,intent,method,prediction,is_correct,priority,failure_type,possible_cause,next_step
+14,我想查訂單編號A1023的進度,order_delivery,TF-IDF Logistic Regression,refund_return,False,0,refund/semantic ambiguity,Short synthetic text gives weak evidence for this intent boundary.,Add harder refund/order examples and review feature representation.
+18,海外訂單大概多久到貨,order_delivery,TF-IDF Logistic Regression,refund_return,False,0,refund/semantic ambiguity,Short synthetic text gives weak evidence for this intent boundary.,Add harder refund/order examples and review feature representation.
+28,請問七天鑑賞期怎麼算,refund_return,TF-IDF Logistic Regression,product_info,False,0,refund/semantic ambiguity,Short synthetic text gives weak evidence for this intent boundary.,Add harder refund/order examples and review feature representation.

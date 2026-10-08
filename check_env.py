@@ -1,4 +1,4 @@
-"""Environment check for Week 1-4 customer intent repo."""
+"""Environment check for Week 1-5 customer intent repo."""
 
 from __future__ import annotations
 
@@ -17,8 +17,12 @@ REQUIRED_FILES = [
     "data/customer_intent_demo.csv",
     "notebooks/week01_baseline.ipynb",
     "notebooks/week04_baseline.ipynb",
+    "notebooks/week05_ml_experiment.ipynb",
     "evidence/week04_baseline_report.md",
     "evidence/week04_solution_choice_note.md",
+    "evidence/week05_ml_experiment.md",
+    "outputs/week05_results.csv",
+    "outputs/week05_top3_failures.csv",
 ]
 
 
@@ -54,7 +58,7 @@ def main() -> int:
 
     print()
     print("Environment check passed.")
-    print("Open notebooks/week01_baseline.ipynb or notebooks/week04_baseline.ipynb in VS Code, Anaconda, or Jupyter.")
+    print("Open notebooks/week05_ml_experiment.ipynb for Week 5.")
     return 0
 
 

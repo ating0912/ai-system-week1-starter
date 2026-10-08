@@ -1,0 +1,4 @@
+method,split,accuracy,macro_f1,refund_return_recall,threshold,runtime_seconds,note
+Majority Class,test,0.26666666666666666,0.10526315789473684,0.0,N/A,0.006367900175973773,Naive reference using train label distribution only.
+Rule-based Keyword,test,1.0,1.0,1.0,N/A,0.0003200999926775694,Week 4 credible baseline from src/rule_baseline.py.
+TF-IDF Logistic Regression,test,0.7333333333333333,0.6984126984126985,0.3333333333333333,N/A,0.0792739000171423,Simple ML candidate; TF-IDF fit on train only.

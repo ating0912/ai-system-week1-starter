@@ -128,3 +128,26 @@ jupyter notebook notebooks/week04_baseline.ipynb
 ```
 
 本週比較 Majority Class、Rule-based Keyword 與 TF-IDF Logistic Regression，並用 Macro F1 與 `refund_return` recall 判斷是否值得增加模型複雜度。
+
+
+## Week 5
+
+Week 5 新增 ML Experiment v1，沿用客服問題意圖分類資料，將 Week 4 baseline 轉成可重現的模型比較證據。
+
+主要檔案：
+
+```text
+notebooks/week05_ml_experiment.ipynb
+evidence/week05_ml_experiment.md
+outputs/week05_results.csv
+outputs/week05_predictions.csv
+outputs/week05_top3_failures.csv
+```
+
+執行方式：
+
+```bash
+jupyter notebook notebooks/week05_ml_experiment.ipynb
+```
+
+本週固定 Dataset / Split / Metric，並比較 Majority Class、Rule-based Keyword 與 TF-IDF Logistic Regression。

@@ -1,0 +1,46 @@
+case_id,message,intent,method,prediction,is_correct
+74,會員生日資料可以修改嗎,account_login,Majority Class,order_delivery,False
+20,今天下單明天會出貨嗎,order_delivery,Majority Class,order_delivery,True
+36,發票開錯想退費可以改嗎,refund_return,Majority Class,order_delivery,False
+57,我想刪除會員帳號,account_login,Majority Class,order_delivery,False
+89,保固需要登錄嗎,product_info,Majority Class,order_delivery,False
+82,商品重量是多少,product_info,Majority Class,order_delivery,False
+14,我想查訂單編號A1023的進度,order_delivery,Majority Class,order_delivery,True
+94,這個產品可以放洗碗機嗎,product_info,Majority Class,order_delivery,False
+28,請問七天鑑賞期怎麼算,refund_return,Majority Class,order_delivery,False
+60,帳號顯示異常登入提醒,account_login,Majority Class,order_delivery,False
+56,登入後一直跳回首頁,account_login,Majority Class,order_delivery,False
+40,拆封後還能退貨嗎,refund_return,Majority Class,order_delivery,False
+76,這款產品有哪些顏色,product_info,Majority Class,order_delivery,False
+18,海外訂單大概多久到貨,order_delivery,Majority Class,order_delivery,True
+15,到貨簡訊沒有收到怎麼辦,order_delivery,Majority Class,order_delivery,True
+74,會員生日資料可以修改嗎,account_login,Rule-based Keyword,account_login,True
+20,今天下單明天會出貨嗎,order_delivery,Rule-based Keyword,order_delivery,True
+36,發票開錯想退費可以改嗎,refund_return,Rule-based Keyword,refund_return,True
+57,我想刪除會員帳號,account_login,Rule-based Keyword,account_login,True
+89,保固需要登錄嗎,product_info,Rule-based Keyword,product_info,True
+82,商品重量是多少,product_info,Rule-based Keyword,product_info,True
+14,我想查訂單編號A1023的進度,order_delivery,Rule-based Keyword,order_delivery,True
+94,這個產品可以放洗碗機嗎,product_info,Rule-based Keyword,product_info,True
+28,請問七天鑑賞期怎麼算,refund_return,Rule-based Keyword,refund_return,True
+60,帳號顯示異常登入提醒,account_login,Rule-based Keyword,account_login,True
+56,登入後一直跳回首頁,account_login,Rule-based Keyword,account_login,True
+40,拆封後還能退貨嗎,refund_return,Rule-based Keyword,refund_return,True
+76,這款產品有哪些顏色,product_info,Rule-based Keyword,product_info,True
+18,海外訂單大概多久到貨,order_delivery,Rule-based Keyword,order_delivery,True
+15,到貨簡訊沒有收到怎麼辦,order_delivery,Rule-based Keyword,order_delivery,True
+74,會員生日資料可以修改嗎,account_login,TF-IDF Logistic Regression,account_login,True
+20,今天下單明天會出貨嗎,order_delivery,TF-IDF Logistic Regression,order_delivery,True
+36,發票開錯想退費可以改嗎,refund_return,TF-IDF Logistic Regression,order_delivery,False
+57,我想刪除會員帳號,account_login,TF-IDF Logistic Regression,account_login,True
+89,保固需要登錄嗎,product_info,TF-IDF Logistic Regression,product_info,True
+82,商品重量是多少,product_info,TF-IDF Logistic Regression,product_info,True
+14,我想查訂單編號A1023的進度,order_delivery,TF-IDF Logistic Regression,refund_return,False
+94,這個產品可以放洗碗機嗎,product_info,TF-IDF Logistic Regression,product_info,True
+28,請問七天鑑賞期怎麼算,refund_return,TF-IDF Logistic Regression,product_info,False
+60,帳號顯示異常登入提醒,account_login,TF-IDF Logistic Regression,account_login,True
+56,登入後一直跳回首頁,account_login,TF-IDF Logistic Regression,account_login,True
+40,拆封後還能退貨嗎,refund_return,TF-IDF Logistic Regression,refund_return,True
+76,這款產品有哪些顏色,product_info,TF-IDF Logistic Regression,product_info,True
+18,海外訂單大概多久到貨,order_delivery,TF-IDF Logistic Regression,refund_return,False
+15,到貨簡訊沒有收到怎麼辦,order_delivery,TF-IDF Logistic Regression,order_delivery,True

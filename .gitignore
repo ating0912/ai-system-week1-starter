@@ -4,3 +4,6 @@ __pycache__/
 .ipynb_checkpoints/
 outputs/*.ipynb
 outputs/*.csv
+!outputs/week05_results.csv
+!outputs/week05_predictions.csv
+!outputs/week05_top3_failures.csv
